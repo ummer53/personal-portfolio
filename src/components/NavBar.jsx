@@ -37,6 +37,27 @@ const socialIconArray = [
     },
 ]
 
+const SocialIconCard = () => {
+    return (
+        <>
+        {socialIconArray.map((item, index) => {
+            return (
+                
+                <li key={index} className={`w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 ${item.color}`}>
+                        <a className='flex justify-between items-center w-full text-gray-300' href={item.link}>
+                            {item.name}{item.icon}
+                        </a>
+                </li>
+                    
+            )
+        })
+    }
+    </>
+    )
+}
+
+
+
 
 const NavBar = () => {
     const [nav, setNav] = useState(false);
@@ -116,7 +137,9 @@ const NavBar = () => {
         {/*social icons*/}
         <div className='hidden lg:flex fixed flex-col top-[35%] left-0'>
             <ul>
-                <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-blue-600'>
+                <SocialIconCard/>
+
+                {/* <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-blue-600'>
                     <a className='flex justify-between items-center w-full text-gray-300' href='/'>
                         Linkedin<FaLinkedin size={30}/>
                     </a>
@@ -135,7 +158,7 @@ const NavBar = () => {
                     <a className='flex justify-between items-center w-full text-gray-300' href='/'>
                         Resume<BsFillPersonLinesFill size={30}/>
                     </a>
-                </li>
+                </li> */}
             </ul>
         </div>
     </div>

@@ -1,6 +1,8 @@
 import React from 'react'
 import {HiArrowNarrowRight} from 'react-icons/hi'
 import { Link } from 'react-scroll'
+import myImg from '../assets/myimg.jpg'
+
 const Home = () => {
   return (
     <div name='home' className='w-full h-screen bg-[#0a192f] main-div'>
@@ -20,6 +22,11 @@ const Home = () => {
             </button>
             </Link>
         </div>
+
+        <div className='flex justify-center items-center'>
+          <img className='w-40 h-40 rounded-full mt-8' src={myImg} alt="Ummer" />
+        </div>
+
      </div>
     </div>
   )

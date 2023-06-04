@@ -8,6 +8,58 @@ import Git from '../assets/github.png'
 import Java from '../assets/java.png'
 import javascript from '../assets/javascript.png'
 
+const skillArray = [
+    {
+        id: 1,
+        name: 'HTML',
+        image: HTML
+    },
+    {
+        id: 2,
+        name: 'CSS',
+        image: CSS
+    },
+    {
+        id: 3,
+        name: 'Javascript',
+        image: javascript
+    },
+    {
+        id: 4,
+        name: 'React JS',
+        image: ReactIcon
+    },
+    {
+        id: 5,
+        name: 'Node JS',
+        image: Node
+    },
+    {
+        id: 6,
+        name: 'Mongo DB',
+        image: Mongo
+    },
+    {
+        id: 7,
+        name: 'GitHub',
+        image: Git
+    },
+    {
+        id: 8,
+        name: 'Java',
+        image: Java
+    },
+]
+
+const SkillCard = ({name, image}) => {
+    return (
+        <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
+            <img className='w-20 mx-auto' src={image} alt="HTML Icon" /><p className='py-4'>{name}</p>
+        </div>
+    )
+}
+
+
 
 const Skills = () => {
   return (
@@ -22,30 +74,17 @@ const Skills = () => {
             <p className='text-center'>Technologies I can work with</p>
 
             <div className='w-full grid grid-cols-2 sm:grid-cols-4 text-center py-8'>
-                 <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                    <img className='w-20 mx-auto' src={HTML} alt="HTML Icon" /><p className='py-4'>HTML</p>
-                </div>
-                <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                    <img className='w-20 mx-auto' src={CSS} alt="CSS Icon" /><p className='py-4'>CSS</p>
-                </div>
-                <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                    <img className='w-20 mx-auto' src={javascript} alt="Javascript Icon" /><p className='py-4'>Javascript</p>
-                </div>
-                <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                    <img className='w-20 mx-auto' src={ReactIcon} alt="React Icon" /><p className='py-4'>React JS</p>
-                </div>
-                <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                    <img className='w-20 mx-auto' src={Node} alt="Node Icon" /><p className='py-4'>Node JS</p>
-                </div>
-                <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                    <img className='w-20 mx-auto' src={Mongo} alt="Mongo Icon" /><p className='py-4'>Mongo DB</p>
-                </div>
-                <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                    <img className='w-20 mx-auto' src={Git} alt="Git Icon" /><p className='py-4'>GitHub</p>
-                </div>
-                <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                    <img className='w-20 mx-auto' src={Java} alt="Tailwind Icon" /><p className='py-4'>Java</p>
-                </div>
+
+                {/* skillCards*/}
+                
+                {skillArray.map((skill) => {
+                    return (
+                        // {/* skillCard*/}
+                        <SkillCard key={skill.id} name={skill.name} image={skill.image}/>
+                    )
+                })}
+
+                
 
             </div>
         </div>

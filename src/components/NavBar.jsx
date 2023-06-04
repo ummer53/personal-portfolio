@@ -11,31 +11,78 @@ const socialIconArray = [
         id: 1,
         name: 'Linkedin',
         icon: <FaLinkedin size={30}/>,
-        link: 'https://www.linkedin.com/in/mohammad-ummer-7b0b3b1b2/',
+        link: 'https://www.linkedin.com/in/ummer53/',
         color: 'bg-blue-600'
     },
     {
         id: 2,
         name: 'Github',
         icon: <FaGithub size={30}/>,
-        link: 'github.com',
+        link: 'github.com/ummer53',
         color: 'bg-[#33333]'
     },
     {
         id: 3,
         name: 'Email',
         icon: <HiOutlineMail size={30}/>,
-        link: 'github.com',
+        link: 'mailto:mohdumar876@gmail.com',
         color: 'bg-[#6fc2b0]'
     },
     {
         id: 4,
         name: 'Resume',
         icon: <BsFillPersonLinesFill size={30}/>,
-        link: 'github.com',
+        link: 'https://drive.google.com/file/d/1Z3Q4Z3Q3Z3Q3Z3Q3Z3Q3Z3Q3Z3Q3Z3Q3/view?usp=sharing',
         color: 'bg-[#565f69]'
     },
 ]
+
+const navContent = [
+    {
+        id: 1,
+        name: 'Home',
+        link: 'home'
+    },
+    {
+        id: 2,
+        name: 'About',
+        link: 'about'
+    },
+    {
+        id: 3,
+        name: 'Skills',
+        link: 'skills'
+    },
+    {
+        id: 4,
+        name: 'Work',
+        link: 'work'
+    },
+    {
+        id: 5,
+        name: 'Contact',
+        link: 'contact'
+    },
+]
+
+
+const NavLinks = ({handleClick}) => {
+    return (
+        <>
+        {navContent.map((item, index) => {
+            return (
+                <li key={index} className='py-6 text-4xl md:text-2xl'>
+                    <Link to={item.link} smooth={true} duration={500} onClick={handleClick}>
+                            {item.name}
+                    </Link>
+                </li>
+            )
+        })}
+        </>
+    )
+}
+
+
 
 const SocialIconCard = () => {
     return (
@@ -72,64 +119,21 @@ const NavBar = () => {
             </div>
     
             <ul className='hidden md:flex'>
-                <li>
-                    <Link to="home" smooth={true} duration={500}>
-                         Home
-                    </Link>
-                </li>
-                <li>
-                    <Link to="about" smooth={true} duration={500}>
-                         About
-                    </Link>
-                </li>
-                <li>
-                    <Link to="skills" smooth={true} duration={500}>
-                         Skills
-                    </Link>
-                </li>
-                <li>
-                    <Link to="work" smooth={true} duration={500}>
-                         Work
-                    </Link>
-                </li>
-                <li>
-                    <Link to="contact" smooth={true} duration={500}>
-                         Contact
-                    </Link>
-                </li>
+                <NavLinks/>
             </ul>
+
+
             {/* Hamburger */}
             <div onClick={handleClick} className='md:hidden z-10'>
                 {!nav ? <FaBars/> :<FaTimes/>}
             </div>
+
+
             {/* Mobile menu */}
         
             <ul className={!nav ? 'hidden' :' absolute top-0 left-0 w-full h-screen bg-[#0a192f] flex flex-col justify-center items-center'}>
-                <li className='py-6 text-4xl'>
-                    <Link onClick={handleClick} to="home" smooth={true} duration={500}>
-                         Home
-                    </Link>
-                </li>
-                <li className='py-6 text-4xl'>
-                    <Link onClick={handleClick} to="about" smooth={true} duration={500}>
-                         About
-                    </Link>
-                </li>
-                <li className='py-6 text-4xl'>
-                    <Link onClick={handleClick} to="skills" smooth={true} duration={500}>
-                         Skills
-                    </Link>
-                </li>
-                <li  className='py-6 text-4xl'>
-                    <Link onClick={handleClick} to="work" smooth={true} duration={500}>
-                            Work
-                    </Link>
-                </li>
-                <li className='py-6 text-4xl'>
-                    <Link onClick={handleClick} to="contact" smooth={true} duration={500}>
-                            Contact
-                    </Link>
-                </li>
+                
+                <NavLinks handleClick={handleClick}/>
             </ul>
         
         </>
@@ -138,27 +142,6 @@ const NavBar = () => {
         <div className='hidden lg:flex fixed flex-col top-[35%] left-0'>
             <ul>
                 <SocialIconCard/>
-
-                {/* <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-blue-600'>
-                    <a className='flex justify-between items-center w-full text-gray-300' href='/'>
-                        Linkedin<FaLinkedin size={30}/>
-                    </a>
-                </li>
-                <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#33333]'>
-                    <a className='flex justify-between items-center w-full text-gray-300' href='/'>
-                        Github<FaGithub size={30}/>
-                    </a>
-                </li>
-                <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#6fc2b0]'>
-                    <a className='flex justify-between items-center w-full text-gray-300' href='/'>
-                        Email<HiOutlineMail size={30}/>
-                    </a>
-                </li>
-                <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#565f69]'>
-                    <a className='flex justify-between items-center w-full text-gray-300' href='/'>
-                        Resume<BsFillPersonLinesFill size={30}/>
-                    </a>
-                </li> */}
             </ul>
         </div>
     </div>

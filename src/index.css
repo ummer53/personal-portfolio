@@ -28,3 +28,11 @@
     hsla(242, 74%, 61%, 0.8)
   )!important;
 }
+
+.main-div {
+  background-image: linear-gradient(
+    to right,
+    rgba(112, 157, 255, 0.8),
+    hsla(242, 35%, 41%, 0.8)
+  );
+}

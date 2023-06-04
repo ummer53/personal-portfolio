@@ -7,6 +7,11 @@ import Mongo from '../assets/mongo.png'
 import Git from '../assets/github.png'
 import Java from '../assets/java.png'
 import javascript from '../assets/javascript.png'
+import C from '../assets/c++2.png'
+import spring from '../assets/spring.png'
+import linux from '../assets/linux.png'
+import sql from '../assets/sql.png'
+
 
 const skillArray = [
     {
@@ -49,6 +54,26 @@ const skillArray = [
         name: 'Java',
         image: Java
     },
+    {
+        id: 9,
+        name: 'C++',
+        image: C
+    },
+    {
+        id: 10,
+        name: 'Spring',
+        image: spring
+    },
+    {
+        id: 11,
+        name: 'Linux',
+        image: linux
+    },
+    {
+        id: 12,
+        name: 'SQL',
+        image: sql
+    },
 ]
 
 const SkillCard = ({name, image}) => {
@@ -63,7 +88,7 @@ const SkillCard = ({name, image}) => {
 
 const Skills = () => {
   return (
-    <div name='skills' className='w-full h-screen bg-[#0a192f] text-gray-300 main-div'>
+    <div name='skills' className='w-full h-screen bg-[#0a192f] text-gray-300 main-div pb-20'>
         {/* Container */}
         <div className='max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full'>
 	        <div className='max-w-[1000px] w-full grid grid-cols gap-8'>

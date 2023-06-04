@@ -1,14 +1,11 @@
 import React from 'react'
 import HTML from '../assets/html.png'
 import CSS from '../assets/css.png'
-// import JS from '../assets/js.png'
 import ReactIcon from '../assets/react.png'
 import Node from '../assets/node.png'
-// import Express from '../assets/express.png'
 import Mongo from '../assets/mongo.png'
 import Git from '../assets/github.png'
-import Tailwind from '../assets/tailwind.png'
-// import Bootstrap from '../assets/bootstrap.png'
+import Java from '../assets/java.png'
 import javascript from '../assets/javascript.png'
 
 
@@ -47,7 +44,7 @@ const Skills = () => {
                     <img className='w-20 mx-auto' src={Git} alt="Git Icon" /><p className='py-4'>GitHub</p>
                 </div>
                 <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                    <img className='w-20 mx-auto' src={Tailwind} alt="Tailwind Icon" /><p className='py-4'>Tailwind</p>
+                    <img className='w-20 mx-auto' src={Java} alt="Tailwind Icon" /><p className='py-4'>Java</p>
                 </div>
 
             </div>

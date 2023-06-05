@@ -36,3 +36,28 @@
     hsla(242, 35%, 41%, 0.8)
   );
 }
+
+.marquee-container {
+  white-space: nowrap;
+  overflow: hidden;
+  color: red;
+}
+
+.marquee-content {
+  display: inline-block;
+  animation: marquee 12s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.marquee-content:hover {
+  animation-play-state: paused;
+}

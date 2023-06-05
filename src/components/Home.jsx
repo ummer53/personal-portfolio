@@ -23,6 +23,12 @@ const Home = () => {
             </Link>
         </div>
 
+        <div className="marquee-container">
+          <div className="marquee-content">
+            <p className='font-2xl'>Site is under construction, Projects and their corresponding codes are yet to be uploaded. To provide any feedback feel free to use the contact form </p>
+          </div>
+        </div>
+
         <div className='flex justify-center items-center'>
           <img className='w-40 h-40 rounded-full mt-8' src={myImg} alt="Ummer" />
         </div>

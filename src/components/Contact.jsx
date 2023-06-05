@@ -10,9 +10,9 @@ const Contact = () => {
               <p className='text-gray-300 py-4'>submit the form</p>
           </div>
 
-          <input type="text" placeholder='Name' name="name" className='bg-[#a1b0c7] border-b-2 border-gray-300 text-gray-700 py-2 px-4 outline-none focus:border-pink-600 my-2' />
-          <input type="email" placeholder='Email' name="email" className='bg-[#a1b0c7] border-b-2 border-gray-300 text-gray-700 py-2 px-4 outline-none focus:border-pink-600 my-2' />
-          <textarea name="message" id="" cols="30" rows="10" placeholder='Message' className='bg-[#a1b0c7] border-b-2 border-gray-300 text-gray-700 py-2 px-4 outline-none focus:border-pink-600 my-2'></textarea>
+          <input type="text" placeholder='Name' name="name" className='bg-[#e6e9ec] border-b-2 border-gray-300 text-gray-700 py-2 px-4 outline-none focus:border-pink-600 my-2' />
+          <input type="email" placeholder='Email' name="email" className='bg-[#e6e9ec] border-b-2 border-gray-300 text-gray-700 py-2 px-4 outline-none focus:border-pink-600 my-2' />
+          <textarea name="message" id="" cols="30" rows="10" placeholder='Message' className='bg-[#e6e9ec] border-b-2 border-gray-300 text-gray-700 py-2 px-4 outline-none focus:border-pink-600 my-2'></textarea>
           <button className='bg-[#a1b0c7] text-white py-2 px-4 my-2 mx-auto border-2 hover:bg-red-900'>Let's Colloborate</button>
         </form>
       </div>  

@@ -18,7 +18,7 @@ const socialIconArray = [
         id: 2,
         name: 'Github',
         icon: <FaGithub size={30}/>,
-        link: 'github.com/ummer53',
+        link: 'https://www.github.com/ummer53',
         color: 'bg-[#33333]'
     },
     {

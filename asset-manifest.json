@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.508a3f95.css",
-    "main.js": "/static/js/main.2b59c5c4.js",
-    "static/media/realestate.jpg": "/static/media/realestate.44fd19f4c6872731149c.jpg",
-    "static/media/mus.jpg": "/static/media/mus.b27e74a7254e966c9be6.jpg",
-    "static/media/workImg.jpeg": "/static/media/workImg.e4c66be6ae2ae4f83608.jpeg",
-    "static/media/react.png": "/static/media/react.0cf951a69d8e58f83f9d.png",
-    "static/media/node.png": "/static/media/node.952a9ea986dcfa5229ad.png",
-    "static/media/mongo.png": "/static/media/mongo.2a1528ddc31d4ce8518d.png",
-    "static/media/github.png": "/static/media/github.3b9e32903aa89111875d.png",
-    "static/media/html.png": "/static/media/html.2ba4fabc69a89a8f71e6.png",
-    "static/media/css.png": "/static/media/css.69a82c2d9e45c933a9cb.png",
-    "static/media/myimg.jpg": "/static/media/myimg.fe91dde4f61ff2b973d0.jpg",
-    "static/media/javascript.png": "/static/media/javascript.1ccd6ef9bb1f9c84ef00.png",
-    "index.html": "/index.html",
-    "main.508a3f95.css.map": "/static/css/main.508a3f95.css.map",
-    "main.2b59c5c4.js.map": "/static/js/main.2b59c5c4.js.map"
+    "main.css": "/personal-portfolio/static/css/main.5fd13ca3.css",
+    "main.js": "/personal-portfolio/static/js/main.e9e492ff.js",
+    "static/media/realestate.jpg": "/personal-portfolio/static/media/realestate.44fd19f4c6872731149c.jpg",
+    "static/media/mus.jpg": "/personal-portfolio/static/media/mus.b27e74a7254e966c9be6.jpg",
+    "static/media/workImg.jpeg": "/personal-portfolio/static/media/workImg.e4c66be6ae2ae4f83608.jpeg",
+    "static/media/react.png": "/personal-portfolio/static/media/react.0cf951a69d8e58f83f9d.png",
+    "static/media/node.png": "/personal-portfolio/static/media/node.952a9ea986dcfa5229ad.png",
+    "static/media/mongo.png": "/personal-portfolio/static/media/mongo.2a1528ddc31d4ce8518d.png",
+    "static/media/github.png": "/personal-portfolio/static/media/github.3b9e32903aa89111875d.png",
+    "static/media/html.png": "/personal-portfolio/static/media/html.2ba4fabc69a89a8f71e6.png",
+    "static/media/css.png": "/personal-portfolio/static/media/css.69a82c2d9e45c933a9cb.png",
+    "static/media/myimg.jpg": "/personal-portfolio/static/media/myimg.fe91dde4f61ff2b973d0.jpg",
+    "static/media/javascript.png": "/personal-portfolio/static/media/javascript.1ccd6ef9bb1f9c84ef00.png",
+    "index.html": "/personal-portfolio/index.html",
+    "main.5fd13ca3.css.map": "/personal-portfolio/static/css/main.5fd13ca3.css.map",
+    "main.e9e492ff.js.map": "/personal-portfolio/static/js/main.e9e492ff.js.map"
   },
   "entrypoints": [
-    "static/css/main.508a3f95.css",
-    "static/js/main.2b59c5c4.js"
+    "static/css/main.5fd13ca3.css",
+    "static/js/main.e9e492ff.js"
   ]
 }

@@ -32,7 +32,7 @@ const socialIconArray = [
         id: 4,
         name: 'Resume',
         icon: <BsFillPersonLinesFill size={30}/>,
-        link: 'https://drive.google.com/file/d/1Z3Q4Z3Q3Z3Q3Z3Q3Z3Q3Z3Q3Z3Q3Z3Q3/view?usp=sharing',
+        link: 'https://drive.google.com/file/d/16dwBi2bNCVitZShzEsTmdeIHo9TdkpWl/view?usp=sharing',
         color: 'bg-[#565f69]'
     },
 ]

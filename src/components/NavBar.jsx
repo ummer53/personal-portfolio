@@ -91,7 +91,7 @@ const SocialIconCard = () => {
             return (
                 
                 <li key={index} className={`w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 ${item.color}`}>
-                        <a className='flex justify-between items-center w-full text-gray-300' href={item.link}>
+                        <a className='flex justify-between items-center w-full text-gray-300' target='_blank' href={item.link}>
                             {item.name}{item.icon}
                         </a>
                 </li>

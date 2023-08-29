@@ -5,7 +5,7 @@ import myImg from '../assets/myimg.jpg'
 
 const Home = () => {
   return (
-    <div name='home' className='w-full h-screen bg-[#ff00ff] main-div'>
+    <div name='home' className='w-full h-screen bg-[#ffffff] main-div'>
      {/* Container */}
      <div className='max-w-[1000px] mx-auto px-8 h-full flex flex-col justify-center text-gray-400'>
         <p className='text-pink-600'>Hi, my name is </p>

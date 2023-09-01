@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/personal-portfolio/static/css/main.a688c68f.css",
-    "main.js": "/personal-portfolio/static/js/main.850e3b48.js",
+    "main.css": "/personal-portfolio/static/css/main.a4e34bf4.css",
+    "main.js": "/personal-portfolio/static/js/main.b331499a.js",
     "static/media/movieApi.png": "/personal-portfolio/static/media/movieApi.58c74a0bffc8fb8caa00.png",
     "static/media/realestate.jpg": "/personal-portfolio/static/media/realestate.44fd19f4c6872731149c.jpg",
     "static/media/mus.jpg": "/personal-portfolio/static/media/mus.b27e74a7254e966c9be6.jpg",
@@ -15,11 +15,11 @@
     "static/media/myimg.jpg": "/personal-portfolio/static/media/myimg.fe91dde4f61ff2b973d0.jpg",
     "static/media/javascript.png": "/personal-portfolio/static/media/javascript.1ccd6ef9bb1f9c84ef00.png",
     "index.html": "/personal-portfolio/index.html",
-    "main.a688c68f.css.map": "/personal-portfolio/static/css/main.a688c68f.css.map",
-    "main.850e3b48.js.map": "/personal-portfolio/static/js/main.850e3b48.js.map"
+    "main.a4e34bf4.css.map": "/personal-portfolio/static/css/main.a4e34bf4.css.map",
+    "main.b331499a.js.map": "/personal-portfolio/static/js/main.b331499a.js.map"
   },
   "entrypoints": [
-    "static/css/main.a688c68f.css",
-    "static/js/main.850e3b48.js"
+    "static/css/main.a4e34bf4.css",
+    "static/js/main.b331499a.js"
   ]
 }

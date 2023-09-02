@@ -1,6 +1,5 @@
 import '../index.css';
-import 'react-responsive-carousel/lib/styles/carousel.min.css'; // Import the carousel styles
-import { Carousel } from 'react-responsive-carousel';
+import Carousel from 'react-material-ui-carousel';
 import networkImg from '../assets/network-bar.png';
 import homeIcon from '../assets/white-home-icon-png-16.png';
 import { useEffect, useState } from 'react';
@@ -29,74 +28,78 @@ const Demo = () => {
 	}, []);
 
 	return (
-		<div className="bg-[#0a192f] flex items-center justify-left h-screen w-full pb-4 main-div">
-			<div className="hidden">
-				<Carousel
-					className="custom-carousel tablet:bg-[#e5e7eb] flex items-center justify-left h-screen w-full py-0 mx-auto"
-					autoPlay
-					infiniteLoop
-					showIndicators={false}
-					showStatus={false}
-					showThumbs={false}
-				>
-					<div className="laptop-screen flex justify-right p-auto mx-auto ">
-						<div className="laptop-screen__terminal1 bg-black hi-auto ml-4 mt-4 w-[60%] h-[40%] ">
-							<p className=" text-white">
-								<span className="text-green-600 font-semibold font-mono">
-									{' '}
-									ummer@ummer-ideapad
-								</span>
-								:~$ npm start
-							</p>
-						</div>
-					</div>
-					<div className="laptop-screen flex justify-center p-auto mx-auto">
-						<div className="laptop-screen__terminal2  bg-black hi-auto ml-4 mt-4 w-[80%] h-[40%]">
-							{/* ... */}
-							<p className=" text-blue-600 font-mono p-2">
-								starting the development server...
-							</p>
-						</div>
-					</div>
-					<div className="laptop-screen flex justify-center p-auto mx-auto">
-						<div className="laptop-screen__terminal3 bg-black hi-auto m-auto text-left w-[90%] h-[95%] p-auto">
-							<p className="bg-black text-green-600 font-mono ">
-								Compiled successfully!
-							</p>
-							<p className="bg-black text-green-400 font-mono py-1 ">
-								You can now view{' '}
-								<span className="text-red-600">my-portfolio</span> in the
-								browser.
-							</p>
-							<p className="bg-black text-blue-400 font-mono ml-2 w-auto">
-								<span className="text-red-600">Local:</span>{' '}
-								http://localhost:3000/personal-portfolio
-							</p>
-							<p className="bg-black text-blue-400 font-mono pb-1 pl-2 w-auto">
-								<span className="text-red-600">On Your Network:</span>{' '}
-								http://192.168.1.4:3000/personal-portfolio
-							</p>
-							<p className="bg-black text-white font-mono  ">
-								Note that the development build is not optimized. To create a
-								production build,{' '}
-								<span className="text-blue-300">use npm run build.</span>
-							</p>
-							<p className="bg-black text-white font-mono pt-1 ">
-								webpack compiled{' '}
-								<span className="text-green-600">successfully</span>
-							</p>
-						</div>
-					</div>
-				</Carousel>
-			</div>
-			<div className="mobile bg-black w-[80%] h-[90%] flex  justify-center items-center rounded-xl max-w-xs:hidden mx-auto">
+		<div className="bg-[#0a192f] flex items-center justify-between h-screen w-full pb-4 main-div px-4">
+			<Carousel
+				showIndicators={false}
+				showThumbs={false}
+				className="w-full h-auto hidden desktop:flex flex-col desktop:w-[50%]"
+			>
+				<Phone
+					time={time}
+					url={'https://ummer53.github.io/personal-porfolio/'}
+				/>
+
+				<Phone
+					time={time}
+					url={'https://ummer53.github.io/personal-porfolio/'}
+				/>
+
+				<Phone
+					time={time}
+					url={'https://ummer53.github.io/personal-portfolio/'}
+				/>
+			</Carousel>
+			<Carousel className="hidden bg-white max-w-[1024px] max-h-[800px] w-full h-full laptop:flex flex-col justify-center p-auto mx-auto">
+				<Monitor
+					time={time}
+					url={'https://ummer53.github.io/personal-porfolio/'}
+				/>
+				<Monitor
+					time={time}
+					url={'https://ummer53.github.io/personal-porfolio/'}
+				/>
+				<Monitor
+					time={time}
+					url={'https://ummer53.github.io/personal-porfolio/'}
+				/>
+			</Carousel>
+			<Carousel
+				showIndicators={false}
+				showThumbs={false}
+				className="w-full laptop:w-[50%]  h-auto"
+			>
+				<Phone
+					time={time}
+					url={'https://ummer53.github.io/personal-porfolio/'}
+				/>
+
+				<Phone
+					time={time}
+					url={'https://ummer53.github.io/personal-porfolio/'}
+				/>
+
+				<Phone
+					time={time}
+					url={'https://ummer53.github.io/personal-portfolio/'}
+				/>
+			</Carousel>
+		</div>
+	);
+};
+
+const Phone = ({ time, url }) => {
+	return (
+		<>
+			{' '}
+			<div className="mobile bg-black w-[80%] h-[600px] flex  justify-center items-center rounded-xl max-w-xs:hidden mx-auto">
 				<div className="mobile-screen bg-[#e6e9ee] w-[90%] h-[95%] flex flex-col justify-center items-center rounded-xl p-2">
+					<div className="bg-[#e6e9ee] w-[20px] h-[20px] rounded-t-sm rounded-b-md mb-[-12.5px] z-10"></div>
 					<div className="status-bar flex flex-row w-full border-2">
 						<span className="bg-white h-[20px] w-full float-left">{time}</span>
 						<img
 							src={networkImg}
 							alt="network"
-							className="w-[70%] h-[20px] float-right"
+							className="tablet:w-[30%] w-[50%] h-[20px] float-right"
 						/>
 					</div>
 					<div className="browser-bar w-full h-10 rounded-md border-2 flex flex-row justify-between">
@@ -107,22 +110,33 @@ const Demo = () => {
 						/>
 						<input
 							type="text"
-							value={'https://ummer53.github.io/personal-portfolio/'}
+							value={url}
 							onChange={() => {}}
 							placeholder="Type something..."
 							className="text-white w-full border-solid-2 border-black h-[95%] bg-gray-400 rounded-2xl"
 						/>
 					</div>
-					<iframe
-						src="https://ummer53.github.io/personal-portfolio/"
-						className=" site-content h-full w-full overflow-hidden rounded-md border-2"
-						title="demo"
-					>
-						{' '}
-					</iframe>
+					<div className="h-full w-full overflow-auto">
+						<iframe
+							src={url}
+							className=" site-content w-[100%] h-[100%]   overflow-auto rounded-md border-2"
+							title="demo"
+						>
+							{' '}
+						</iframe>
+					</div>
 				</div>
 			</div>
-		</div>
+		</>
+	);
+};
+const Monitor = ({ time, url }) => {
+	return (
+		<>
+			<div className="laptop hidden bg-black max-w-[1024px] max-h-[800px] w-[96%] h-[90%] laptop:flex justify-center p-auto mx-auto">
+				jhgdfhbjfgbj
+			</div>
+		</>
 	);
 };
 

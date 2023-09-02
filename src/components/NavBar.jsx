@@ -93,7 +93,7 @@ const SocialIconCard = () => {
 				return (
 					<li
 						key={index}
-						className={`w-[160px] h-[60px] flex justify-between items-center ml-[-120px] hover:ml-[-10px] duration-300 ${item.color}`}
+						className={`w-[160px] h-[60px] flex justify-between items-center ml-[-130px] hover:ml-[-10px] duration-300 ${item.color}`}
 					>
 						<a
 							className="flex justify-between items-center w-full text-gray-300"
@@ -117,7 +117,7 @@ const NavBar = () => {
 		setNav(!nav);
 	};
 	return (
-		<div className="fixed w-full h-[80px] flex justify-between items-center px-4 bg-[#99a1af] text-gray-300  z-10">
+		<div className="fixed w-full h-[80px] flex justify-between items-center px-4 bg-[#99a1af] text-white  z-10">
 			<>
 				<div>
 					<img src={logo} alt="logo" className="w-[50px] h-[50px]" />
@@ -146,7 +146,7 @@ const NavBar = () => {
 			</>
 
 			{/*social icons*/}
-			<div className="hidden lg:flex fixed flex-col top-[35%] left-0">
+			<div className="hidden desktop:flex fixed flex-col top-[35%] left-0">
 				<ul>
 					<SocialIconCard />
 				</ul>

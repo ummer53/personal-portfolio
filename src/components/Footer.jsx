@@ -1,25 +1,33 @@
-import React from 'react'
+import { SocialIcon } from 'react-social-icons';
 
+const Footer = () => {
+	return (
+		<div className="w-full h-20 bg-[#607491] flex justify-center items-center">
+			<div className="flex justify-center items-center">
+				<SocialIcon
+					url="https://www.github.com/ummer53"
+					className="mr-4"
+					target="_blank"
+					fgColor="#fff"
+					style={{ height: 35, width: 35 }}
+				/>
+				<SocialIcon
+					url="https://linkedin.com/in/ummer53"
+					className="mr-4"
+					target="_blank"
+					fgColor="#fff"
+					style={{ height: 35, width: 35 }}
+				/>
+				<SocialIcon
+					url="https://www.instagram.com/ummer_53/"
+					className="mr-4"
+					target="_blank"
+					fgColor="#fff"
+					style={{ height: 35, width: 35 }}
+				/>
+			</div>
+		</div>
+	);
+};
 
-const Footer = ({socialIconArray}) => {
-  return (
-    <div className='h-200px w-full grid grid-cols-1 bg-[#25ac] text-left main-div'>
-        <div className='w-full h-full grid justify-center  text-left'>
-        {socialIconArray.map((item, index) => {
-
-            return (
-                <button className='w-[90px]'>
-                 <p key={index} className={`lg:hidden w-full h-[40px] flex hover:ml-[-10px] duration-300  ${item.color} rounded-lg`}>
-                        <a className='flex justify-center items-center w-full text-gray-300' href={item.link}>
-                            {item.name}{item.icon}
-                        </a>
-                    </p>
-                </button>    
-            )
-        })}
-        </div>
-    </div>
-  )
-}
-
-export default Footer
+export default Footer;

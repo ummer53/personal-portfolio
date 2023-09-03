@@ -75,11 +75,22 @@ const skillArray = [
 	},
 ];
 
-const SkillCard = ({ name, image }) => {
+const SkillCard = () => {
 	return (
-		<div className="shadow-md shadow-[#040c16] hover:scale-110 duration-500">
-			<img className="w-20 mx-auto" src={image} alt="HTML Icon" />
-			<p className="py-4">{name}</p>
+		<div
+			className={`w-full grid  grid-cols-2 gap-8 sm:grid-cols-4 text-center py-8 `}
+		>
+			{skillArray.map((skill) => {
+				return (
+					<div
+						className={` shadow-md shadow-[#040c16] duration-50    hover:scale-75`}
+					>
+						<img className=" w-20 mx-auto" src={skill.image} alt="HTML Icon" />
+
+						<p className="py-4">{skill.name}</p>
+					</div>
+				);
+			})}
 		</div>
 	);
 };
@@ -91,9 +102,9 @@ const Skills = () => {
 			className="w-full h-full bg-[#0a192f] text-gray-300 main-div "
 		>
 			{/* Container */}
-			<div className="max-w-[1000px] mx-auto  flex flex-col justify-center w-full h-full pt-20">
+			<div className="max-w-[1000px] mx-auto  flex flex-col justify-center w-full h-full pt-20 ">
 				<div className="max-w-[1000px] w-full grid grid-cols gap-8">
-					<div className="sm:text-center pb-8 pl-4">
+					<div className="sm:text-center pb-8 pl-4 ">
 						<p className="text-4xl inline font-bold border-b-4 border-pink-600 ">
 							Skills
 						</p>
@@ -101,16 +112,7 @@ const Skills = () => {
 				</div>
 				<p className="text-center">Technologies I can work with</p>
 
-				<div className="w-full grid grid-cols-2 gap-8 sm:grid-cols-4 text-center py-8">
-					{/* skillCards*/}
-
-					{skillArray.map((skill) => {
-						return (
-							// {/* skillCard*/}
-							<SkillCard key={skill.id} name={skill.name} image={skill.image} />
-						);
-					})}
-				</div>
+				<SkillCard />
 			</div>
 		</div>
 	);

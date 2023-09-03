@@ -2,8 +2,9 @@ import '../index.css';
 import Carousel from 'react-material-ui-carousel';
 import networkImg from '../assets/network-bar.png';
 import homeIcon from '../assets/white-home-icon-png-16.png';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import allAppsIcon from '../assets/all-apps.png';
+import { Terminal1, Terminal2, Terminal3 } from './DemoTerminal';
 
 function importAllImages(r) {
 	return r.keys().map(r);
@@ -39,9 +40,12 @@ const Demo = () => {
 	return (
 		<div className="bg-[#0a192f] flex items-center justify-between h-screen w-full pb-4 main-div px-4">
 			<Carousel
-				showIndicators={false}
-				showThumbs={false}
-				className="w-full h-auto hidden desktop:flex flex-col desktop:w-[50%] p-auto"
+				autoPlay={true}
+				animation={'slide'}
+				indicators={false}
+				interval={5000}
+				swipe={true}
+				className="demo-carousel w-full h-[620px] hidden desktop:flex flex-col desktop:w-[50%] p-auto"
 			>
 				<Phone time={time} url={'https://ummer53.github/personal-porfolio/'} />
 
@@ -52,24 +56,37 @@ const Demo = () => {
 					url={'https://ummer53.github.io/personal-portfolio/'}
 				/>
 			</Carousel>
-			<Carousel className="hidden  max-w-[1024px] max-h-[800px] w-full h-full laptop:flex flex-col items-center p-auto mx-auto">
+			<Carousel
+				autoPlay={true}
+				animation={'fade'}
+				indicators={true}
+				interval={5000}
+				swipe={true}
+				className="demo-carousel hidden  max-w-[1024px] max-h-[800px] w-full h-full laptop:flex flex-col items-center p-auto mx-auto"
+			>
 				<Monitor
 					time={time}
 					url={'https://ummer53.github.io/personal-porfolio/'}
+					Terminal={Terminal1}
 				/>
 				<Monitor
 					time={time}
 					url={'https://ummer53.github.io/personal-porfolio/'}
+					Terminal={Terminal2}
 				/>
 				<Monitor
 					time={time}
 					url={'https://ummer53.github.io/personal-porfolio/'}
+					Terminal={Terminal3}
 				/>
 			</Carousel>
 			<Carousel
-				showIndicators={false}
-				showThumbs={false}
-				className="w-full laptop:w-[50%]  h-auto"
+				autoPlay={true}
+				animation={'slide'}
+				indicators={false}
+				interval={5000}
+				swipe={true}
+				className="demo-carousel w-full h-[620px] desktop:flex flex-col desktop:w-[50%] p-auto"
 			>
 				<Phone time={time} url={'https://ummer53.github/personal-porfolio/'} />
 
@@ -85,6 +102,11 @@ const Demo = () => {
 };
 
 const Phone = ({ time, url }) => {
+	const iframeRef = useRef(null);
+
+	// State to store the current URL
+	const [currentUrl, setCurrentUrl] = useState(url);
+
 	return (
 		<>
 			{' '}
@@ -101,21 +123,30 @@ const Phone = ({ time, url }) => {
 					</div>
 					<div className="browser-bar w-full h-10 rounded-md border-2 flex flex-row justify-between">
 						<img
+							onClick={() => {
+								setCurrentUrl('https://www.google.com');
+							}}
 							src={homeIcon}
 							alt="home"
 							className="w-6 h-6 overflow-hidden"
 						/>
 						<input
 							type="text"
-							value={url}
-							onChange={() => {}}
+							value={currentUrl}
+							onChange={(e) => {
+								setCurrentUrl(e.target.value);
+							}}
+							onSubmit={(e) => {
+								setCurrentUrl(e.target.value);
+							}}
 							placeholder="Type something..."
 							className="text-white w-full border-solid-2 border-black h-[95%] bg-gray-400 rounded-2xl"
 						/>
 					</div>
 					<div className="h-full w-full overflow-auto">
 						<iframe
-							src={url}
+							ref={iframeRef}
+							src={currentUrl}
 							className=" site-content w-[100%] h-[100%]   overflow-auto rounded-md border-2 text-left"
 							title="demo"
 						>
@@ -127,11 +158,11 @@ const Phone = ({ time, url }) => {
 		</>
 	);
 };
-const Monitor = ({ time, url }) => {
+const Monitor = ({ Terminal, time, url }) => {
 	return (
 		<>
-			<div className="laptop hidden bg-gray-400 max-w-[1024px] max-h-[800px] w-[100%] h-[600px] laptop:flex p-auto rounded-lg">
-				<span className="laptop-screen bg-gray-500 laptop:w-[98%] laptop:h-[98%] mx-[-20px]">
+			<div className="laptop hidden bg-gray-400 max-w-[1024px] max-h-[800px] w-[96%] h-[600px] laptop:flex p-auto rounded-lg">
+				<span className="laptop-screen bg-gray-500 laptop:w-[98%] laptop:h-[98%] mx-[-20px] flex flex-row">
 					<span className="screen-icons-tray grid flex-col gap-4   w-[6%] h-[100%] p-auto justify-center bg-gray-400 bg-opacity-80 border-0">
 						<span className="screen-icons grid flex-col gap-2 ml-auto mt-[10px] w-[98%] h-[60%] rounded-md p-auto justify-center border-0">
 							{images.map((image, index) => (
@@ -150,6 +181,8 @@ const Monitor = ({ time, url }) => {
 							className="w-[100%] h-[25%] rounded-md border-2 place-self-end mb-[10px]"
 						/>
 					</span>
+
+					<Terminal />
 				</span>
 			</div>
 			<div className="laptop-base w-[25%] bg-gray-400 h-[100px] laptop:mx-auto">

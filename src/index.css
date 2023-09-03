@@ -31,6 +31,7 @@
 
 .main-div {
 	background-color: rgb(10 25 47 / var(--tw-bg-opacity));
+	/* background-color: aliceblue; */
 }
 
 .marquee-container {
@@ -68,6 +69,11 @@
 	border-radius: 2.5% 2.5% 2.5% 2.5%;
 	margin: auto;
 	overflow: hidden;
+}
+
+.mobile,
+.laptop {
+	box-shadow: rgb(131, 129, 129) 0px 0px 10px 10px;
 }
 
 @media (max-width: 360px) {

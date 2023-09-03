@@ -3,6 +3,15 @@ import Carousel from 'react-material-ui-carousel';
 import networkImg from '../assets/network-bar.png';
 import homeIcon from '../assets/white-home-icon-png-16.png';
 import { useEffect, useState } from 'react';
+import allAppsIcon from '../assets/all-apps.png';
+
+function importAllImages(r) {
+	return r.keys().map(r);
+}
+
+const images = importAllImages(
+	require.context('../assets/screen-icons/', false, /\.(png|jpe?g|svg|gif)$/)
+);
 
 const Demo = () => {
 	const [time, setTime] = useState(0);
@@ -32,24 +41,18 @@ const Demo = () => {
 			<Carousel
 				showIndicators={false}
 				showThumbs={false}
-				className="w-full h-auto hidden desktop:flex flex-col desktop:w-[50%]"
+				className="w-full h-auto hidden desktop:flex flex-col desktop:w-[50%] p-auto"
 			>
-				<Phone
-					time={time}
-					url={'https://ummer53.github.io/personal-porfolio/'}
-				/>
+				<Phone time={time} url={'https://ummer53.github/personal-porfolio/'} />
 
-				<Phone
-					time={time}
-					url={'https://ummer53.github.io/personal-porfolio/'}
-				/>
+				<Phone time={time} url={'https://ummer53.github/personal-porfolio/'} />
 
 				<Phone
 					time={time}
 					url={'https://ummer53.github.io/personal-portfolio/'}
 				/>
 			</Carousel>
-			<Carousel className="hidden bg-white max-w-[1024px] max-h-[800px] w-full h-full laptop:flex flex-col justify-center p-auto mx-auto">
+			<Carousel className="hidden  max-w-[1024px] max-h-[800px] w-full h-full laptop:flex flex-col items-center p-auto mx-auto">
 				<Monitor
 					time={time}
 					url={'https://ummer53.github.io/personal-porfolio/'}
@@ -68,15 +71,9 @@ const Demo = () => {
 				showThumbs={false}
 				className="w-full laptop:w-[50%]  h-auto"
 			>
-				<Phone
-					time={time}
-					url={'https://ummer53.github.io/personal-porfolio/'}
-				/>
+				<Phone time={time} url={'https://ummer53.github/personal-porfolio/'} />
 
-				<Phone
-					time={time}
-					url={'https://ummer53.github.io/personal-porfolio/'}
-				/>
+				<Phone time={time} url={'https://ummer53.github/personal-porfolio/'} />
 
 				<Phone
 					time={time}
@@ -93,7 +90,7 @@ const Phone = ({ time, url }) => {
 			{' '}
 			<div className="mobile bg-black w-[80%] h-[600px] flex  justify-center items-center rounded-xl max-w-xs:hidden mx-auto">
 				<div className="mobile-screen bg-[#e6e9ee] w-[90%] h-[95%] flex flex-col justify-center items-center rounded-xl p-2">
-					<div className="bg-[#e6e9ee] w-[20px] h-[20px] rounded-t-sm rounded-b-md mb-[-12.5px] z-10"></div>
+					<span className="notch bg-[#e6e9ee] w-[20px] h-[20px] rounded-t-sm rounded-b-md mb-[-12.5px] z-10"></span>
 					<div className="status-bar flex flex-row w-full border-2">
 						<span className="bg-white h-[20px] w-full float-left">{time}</span>
 						<img
@@ -119,7 +116,7 @@ const Phone = ({ time, url }) => {
 					<div className="h-full w-full overflow-auto">
 						<iframe
 							src={url}
-							className=" site-content w-[100%] h-[100%]   overflow-auto rounded-md border-2"
+							className=" site-content w-[100%] h-[100%]   overflow-auto rounded-md border-2 text-left"
 							title="demo"
 						>
 							{' '}
@@ -133,8 +130,33 @@ const Phone = ({ time, url }) => {
 const Monitor = ({ time, url }) => {
 	return (
 		<>
-			<div className="laptop hidden bg-black max-w-[1024px] max-h-[800px] w-[96%] h-[90%] laptop:flex justify-center p-auto mx-auto">
-				jhgdfhbjfgbj
+			<div className="laptop hidden bg-gray-400 max-w-[1024px] max-h-[800px] w-[100%] h-[600px] laptop:flex p-auto rounded-lg">
+				<span className="laptop-screen bg-gray-500 laptop:w-[98%] laptop:h-[98%] mx-[-20px]">
+					<span className="screen-icons-tray grid flex-col gap-4   w-[6%] h-[100%] p-auto justify-center bg-gray-400 bg-opacity-80 border-0">
+						<span className="screen-icons grid flex-col gap-2 ml-auto mt-[10px] w-[98%] h-[60%] rounded-md p-auto justify-center border-0">
+							{images.map((image, index) => (
+								<img
+									key={index}
+									src={image}
+									alt="icon"
+									onClick={() => {}}
+									className="w-[100%] h-[100%] rounded-md border-2 opacity-100"
+								/>
+							))}
+						</span>
+						<img
+							src={allAppsIcon}
+							alt="all-apps"
+							className="w-[100%] h-[25%] rounded-md border-2 place-self-end mb-[10px]"
+						/>
+					</span>
+				</span>
+			</div>
+			<div className="laptop-base w-[25%] bg-gray-400 h-[100px] laptop:mx-auto">
+				{/* Content of the second div */}
+			</div>
+			<div className="laptop-base w-[45%] bg-gray-400 h-[30px] laptop:mx-auto rounded-t-sm">
+				{/* Content of the second div */}
 			</div>
 		</>
 	);

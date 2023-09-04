@@ -19,7 +19,7 @@ const socialIconArray = [
 		name: 'Github',
 		icon: <FaGithub size={30} />,
 		link: 'https://www.github.com/ummer53',
-		color: 'bg-[#33333]',
+		color: 'bg-[#000000]',
 	},
 	{
 		id: 3,
@@ -70,7 +70,10 @@ const NavLinks = ({ handleClick }) => {
 		<>
 			{navContent.map((item, index) => {
 				return (
-					<li key={index} className="py-6 text-4xl md:text-2xl">
+					<li
+						key={index}
+						className="py-2 items-center ml-[-8px] tablet:py-6  md:text-2xl "
+					>
 						<Link
 							to={item.link}
 							smooth={true}
@@ -96,7 +99,7 @@ const SocialIconCard = () => {
 						className={`w-[160px] h-[60px] flex justify-between items-center ml-[-130px] hover:ml-[-10px] duration-300 ${item.color}`}
 					>
 						<a
-							className="flex justify-between items-center w-full text-gray-300"
+							className="flex justify-between items-center w-full text-white"
 							target="_blank"
 							href={item.link}
 							rel="noreferrer"
@@ -117,7 +120,7 @@ const NavBar = () => {
 		setNav(!nav);
 	};
 	return (
-		<div className="fixed w-full h-[80px] flex justify-between items-center px-4 bg-[#99a1af] text-white  z-10">
+		<div className="fixed w-full h-[80px] flex justify-between items-center px-4 bg-[#99a1af] text-white  z-30">
 			<>
 				<div>
 					<img src={logo} alt="logo" className="w-[50px] h-[50px]" />
@@ -138,7 +141,7 @@ const NavBar = () => {
 					className={
 						!nav
 							? 'hidden'
-							: ' absolute top-0 left-0 w-full h-screen bg-[#0a192f] flex flex-col justify-center items-center'
+							: ' absolute top-0 mt-16 right-0 w-[25%] h-auto bg-[#3e5d8b] flex flex-col justify-center items-center text-sm z-10'
 					}
 				>
 					<NavLinks handleClick={handleClick} />

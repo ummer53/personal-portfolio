@@ -17,61 +17,73 @@ const skillArray = [
 		id: 1,
 		name: 'HTML',
 		image: HTML,
+		level: '90%',
 	},
 	{
 		id: 2,
 		name: 'CSS',
 		image: CSS,
+		level: '80%',
 	},
 	{
 		id: 3,
 		name: 'Javascript',
 		image: javascript,
+		level: '80%',
 	},
 	{
 		id: 4,
 		name: 'React JS',
 		image: ReactIcon,
+		level: '70%',
 	},
 	{
 		id: 5,
 		name: 'Node JS',
 		image: Node,
+		level: '60%',
 	},
 	{
 		id: 6,
 		name: 'Mongo DB',
 		image: Mongo,
+		level: '60%',
 	},
 	{
 		id: 7,
 		name: 'GitHub',
 		image: Git,
+		level: '70%',
 	},
 	{
 		id: 8,
 		name: 'Java',
 		image: Java,
+		level: '80%',
 	},
 	{
 		id: 9,
 		name: 'C++',
 		image: C,
+		level: '80%',
 	},
 	{
 		id: 10,
 		name: 'Spring',
 		image: spring,
+		level: '50%',
 	},
 	{
 		id: 11,
 		name: 'Linux',
 		image: linux,
+		level: '80%',
 	},
 	{
 		id: 12,
 		name: 'SQL',
 		image: sql,
+		level: '60%',
 	},
 ];
 
@@ -83,11 +95,31 @@ const SkillCard = () => {
 			{skillArray.map((skill) => {
 				return (
 					<div
-						className={` shadow-md shadow-[#040c16] duration-50    hover:scale-75`}
+						key={skill.id}
+						onMouseEnter={(event) => {
+							event.currentTarget.children[2].classList.remove('hidden');
+						}}
+						onMouseLeave={(event) => {
+							event.currentTarget.children[2].classList.add('hidden');
+						}}
+						onTouchStart={(event) => {
+							event.currentTarget.children[2].classList.remove('hidden');
+						}}
+						onTouchEnd={(event) => {
+							event.currentTarget.children[2].classList.add('hidden');
+						}}
+						className={`skill relative shadow-md shadow-[#b5c1db] duration-50    hover:overlay`}
 					>
 						<img className=" w-20 mx-auto" src={skill.image} alt="HTML Icon" />
 
 						<p className="py-4">{skill.name}</p>
+						<div
+							className={`overlay hidden w-[${skill.level}] h-auto absolute inset-0 bg-white opacity-50 `}
+						>
+							<p className="text-blue-500 text-2xl pt-20 left-0">
+								{skill.level}
+							</p>
+						</div>
 					</div>
 				);
 			})}

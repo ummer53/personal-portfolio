@@ -45,6 +45,7 @@ const Demo = () => {
 				indicators={false}
 				interval={5000}
 				swipe={true}
+				stopAutoPlayOnHover={false}
 				className="demo-carousel w-full h-[620px] hidden 2k:flex flex-col 2k:w-[50%] p-auto"
 			>
 				<Phone time={time} url={'https://ummer53.github/personal-porfolio/'} />
@@ -59,9 +60,10 @@ const Demo = () => {
 			<Carousel
 				autoPlay={true}
 				animation={'fade'}
-				indicators={true}
+				indicators={false}
 				interval={5000}
 				swipe={true}
+				stopAutoPlayOnHover={false}
 				className="demo-carousel hidden  max-w-[1024px] max-h-[800px] w-full h-full laptop:flex flex-col items-center p-auto mx-auto"
 			>
 				<Monitor
@@ -86,6 +88,7 @@ const Demo = () => {
 				indicators={false}
 				interval={5000}
 				swipe={true}
+				stopAutoPlayOnHover={false}
 				className="demo-carousel w-full h-[620px] laptop:hidden desktop:flex flex-col desktop:w-[40%] 2k:w-[50%] p-auto"
 			>
 				<Phone time={time} url={'https://ummer53.github/personal-porfolio/'} />
@@ -110,10 +113,10 @@ const Phone = ({ time, url }) => {
 	return (
 		<>
 			{' '}
-			<div className="mobile bg-black w-[80%] h-[600px] flex  justify-center items-center rounded-xl max-w-xs:hidden mx-auto">
+			<div className="mobile bg-black w-[80%] h-screen max-h-[600px] flex flex-col justify-center items-center rounded-xl max-w-xs:hidden mx-auto">
+				<span className="notch bg-black w-[50px] h-[20px] rounded-t-sm rounded-b-md mb-[-12.5px] z-10"></span>
 				<div className="mobile-screen bg-[#e6e9ee] w-[90%] h-[95%] flex flex-col justify-center items-center rounded-xl p-2">
-					<span className="notch bg-[#e6e9ee] w-[20px] h-[20px] rounded-t-sm rounded-b-md mb-[-12.5px] z-10"></span>
-					<div className="status-bar flex flex-row w-full border-2">
+					<div className="status-bar flex flex-row w-full border-2 mt-[-6px]">
 						<span className="bg-white h-[20px] w-full float-left">{time}</span>
 						<img
 							src={networkImg}

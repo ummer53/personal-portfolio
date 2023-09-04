@@ -45,7 +45,7 @@ const Demo = () => {
 				indicators={false}
 				interval={5000}
 				swipe={true}
-				className="demo-carousel w-full h-[620px] hidden desktop:flex flex-col desktop:w-[50%] p-auto"
+				className="demo-carousel w-full h-[620px] hidden 2k:flex flex-col 2k:w-[50%] p-auto"
 			>
 				<Phone time={time} url={'https://ummer53.github/personal-porfolio/'} />
 
@@ -86,7 +86,7 @@ const Demo = () => {
 				indicators={false}
 				interval={5000}
 				swipe={true}
-				className="demo-carousel w-full h-[620px] desktop:flex flex-col desktop:w-[50%] p-auto"
+				className="demo-carousel w-full h-[620px] laptop:hidden desktop:flex flex-col desktop:w-[40%] 2k:w-[50%] p-auto"
 			>
 				<Phone time={time} url={'https://ummer53.github/personal-porfolio/'} />
 

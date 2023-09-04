@@ -146,7 +146,7 @@ const NavBar = () => {
 			</>
 
 			{/*social icons*/}
-			<div className="hidden desktop:flex fixed flex-col top-[35%] left-0">
+			<div className="hidden 2k:flex fixed flex-col top-[35%] left-0">
 				<ul>
 					<SocialIconCard />
 				</ul>
